@@ -5,15 +5,23 @@ class LinearCounter:
         self.mask = [False] * m
         self.m = m
 
+    def clear(self):
+        self.mask = [False] * self.m
+
+    def bit(self, i):
+        return self.mask[i]
+
     def add(self, value):
-        position = self._hash(value) % self.m
+        position = self.hash(value) % self.m
         self.mask[position] = True
 
     def print_mask(self):
         print(self.mask)
 
-    def _hash(self, x):
+    def hash(self, x):
         md5 = hashlib.md5(str(hash(x)).encode('utf-8'))
-        # md5.update(str(0))
         return int(md5.hexdigest(), 16) % self.m
+    
+    def estimate_cardinality(self):
+        return self.mask.count(True)
     
