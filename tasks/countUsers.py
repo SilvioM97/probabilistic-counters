@@ -1,8 +1,8 @@
-import linear_counter as lc
-from stream import *
-from stream import dayPart
+import structures.linear_counter as lc
+from utils.stream import *
+from utils.stream import dayPart
 
-def punto1():
+def count_users():
     m = 100000
 
     users_counter = lc.LinearCounter(m)
@@ -24,7 +24,7 @@ def punto1():
     neg_evening_counter = 0
     neg_night_counter = 0
 
-    x = mystream("sample.csv")
+    x = mystream("data_sets/sample.csv")
     s = x.nextRecord ()
     
     while s is not None:

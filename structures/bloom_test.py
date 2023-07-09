@@ -1,4 +1,4 @@
-from bloomfilter import BloomFilter
+from structures.bloomfilter import BloomFilter
 from random import shuffle
 
 n = 20 #no of items to add
